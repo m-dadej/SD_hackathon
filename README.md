@@ -24,7 +24,7 @@ There are 4 R scripts, where only one is independent - glimpse.R. The rest follo
 
 `data_preproc1.R` -> `feature_eng1.R` -> `modeling1.R`
 
-At the beginning of each of scripts, the previous one is sourced. *To reproduce the results one may clone the repo and run the last file ('modeling1.R')*. Note, the last file trains an xgboost model with CV so it takes some time (but not too long since my computational capabilities were limited at the time).
+At the beginning of each of scripts, the previous one is sourced. *To reproduce the results one may clone the repo and run the last file ('modeling1.R')*. Note, the last file trains an xgboost model with CV so it takes some time (but not too long since my computational capabilities were limited at the time). But the preprocessed data and model is saved, so there is no need to run whole script to reproduce.
 
 ### Data preprocessing
 
@@ -93,3 +93,9 @@ It is worth to take a closer look at the distace from the center with the partia
 ![](graphics/pd_dist.png)
 
 It is impressive how well the nonlinear relationship fits to the theoretical rationale of the variable. Very close to the city center the houses are obviously more expensive, but moreover after some minima in the middle, the price of house increases with the distance. Which is most likely due to the house being rented for holidays far away from center with an appealing natural amenities.
+
+![](graphics/pd_grid.png)
+
+The grid chart above shows also partial dependence of choosen variables. A lot of them are indeed nonlinear, (except for acommodates) thus it assures me that there was indeed a need for a ML model to apply.
+
+Fell free to contact me i any case: mateuszdadej(at)gmail.com

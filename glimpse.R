@@ -4,7 +4,7 @@ library(vroom)
 library(geosphere)
 
 
-df_raw <- read.csv("data/raw/train2.csv")
+df_raw <- read.csv("data/raw/train.csv")
 
 glimpse(df_raw)
 

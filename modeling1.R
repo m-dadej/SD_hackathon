@@ -92,11 +92,13 @@ model   <- mlr::train(learner = learner, task = train_task)
 end.time <- Sys.time()
 time.taken <- end.time - start.time
 time.taken
+
+
+# model <- readRDS("models/model_xgb_n.rds")
 preds   <- predict(model, task = test_task)
 
 
 # saveRDS(model, "models/model_xgb_n.rds")
-# model <- readRDS("models/model1_xgb.rds")
 
 # benchmark model - linear with regularization
 bench_model <- glmnet(y = imp_train_df$data$log_price, 
@@ -166,4 +168,16 @@ plot_rev <- plotPartialDependence(pd_reviews) +
   theme_minimal()
 
 ggsave("graphics/pd_rev.png",plot_rev, height = 5, width = 7)
+
+
+selected_variables = c("dist_from_cent", "accommodates", "reviews_per_day", "review_scores_rating")
+
+profile_pd <- model_profile(explainer_obj,
+                        variables = selected_variables)$agr_profiles
+
+PD_grid <- plot(profile_pd) +
+  ggtitle("Partial Dependence profiles for selected variables") +
+  facet_wrap(~`_vname_`, scales = "free")
+
+ggsave("graphics/pd_grid.png",PD_grid, height = 5, width = 7)
 
