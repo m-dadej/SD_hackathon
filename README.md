@@ -76,7 +76,7 @@ However between the cities, there is indeed a difference in model ability to pre
 | City          | MAE           | MEDAE |
 | ------------- |:-------------:| -----:|
 | Boston        | 0.263         | 0.214 |
-| Chocago       | 0.284         | 0.22  |
+| Chicago       | 0.284         | 0.22  |
 | DC            | 0.373         | 0.264 |
 | LA            | 0.273         | 0.204 |
 | NYC           | 0.262         | 0.199 |
@@ -96,6 +96,6 @@ It is impressive how well the nonlinear relationship fits to the theoretical rat
 
 ![](graphics/pd_grid.png)
 
-The grid chart above shows also partial dependence of choosen variables. A lot of them are indeed nonlinear, (except for acommodates) thus it assures me that there was indeed a need for a ML model to apply.
+The grid chart above shows also partial dependence of choosen variables. A lot of them are indeed nonlinear, (except for accommodates) thus it assures me that there was indeed a need for a ML model to apply.
 
 Fell free to contact me i any case: mateuszdadej(at)gmail.com
